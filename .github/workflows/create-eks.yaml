@@ -39,4 +39,4 @@ jobs:
           AZDO_ORG_SERVICE_URL: ${{ vars.AZDO_ORG_SERVICE_URL }}
           AZDO_PERSONAL_ACCESS_TOKEN: ${{ secrets.AZDO_PERSONAL_ACCESS_TOKEN }}
           TF_VAR_reviewers_group_name: ${{ inputs.grupoRevisores }}
-          TF_VAR_ami_id: ${{ environment.ami_id}}
+          TF_VAR_ami_id: ${{ vars.ami_id}}
