@@ -20,7 +20,7 @@ name: "Create AWS EKS Cluster"
 jobs:
   create-repository:
     runs-on: ubuntu-latest
-    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    environment: "ADA"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
