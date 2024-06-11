@@ -18,11 +18,11 @@ on:
 name: "Create AWS EKS Cluster"
 
 jobs:
-  create-repository:
+  create-aws-cluster:
     runs-on: ubuntu-latest
     environment: "ADA"
     steps:
-      - name: Checkout repository
+      - name: Checkout creation
         uses: actions/checkout@v4
 
       - uses: hashicorp/setup-terraform@v3
@@ -44,3 +44,7 @@ jobs:
           TF_VAR_aws_region: ${{ vars.aws_region }}
           TF_VAR_aws_access_key: ${{ secrets.aws_access_key }}
           TF_VAR_aws_secret_key: ${{ secrets.aws_secret_key }}
+      
+      - name: "Kubernetes config"
+        run: setup.sh
+        working-directory: ./terraform
