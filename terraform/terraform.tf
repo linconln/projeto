@@ -32,5 +32,11 @@ terraform {
   }
 
   required_version = "~> 1.3"
+
+  backend "s3" {
+    bucket = "linconln-devops"
+    key    = "devops"
+    region = "us-east-1"
+  }
 }
 
