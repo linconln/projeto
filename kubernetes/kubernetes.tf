@@ -21,7 +21,10 @@ data "terraform_remote_state" "eks" {
 
 # Retrieve EKS cluster information
 provider "aws" {
-  region = data.terraform_remote_state.eks.outputs.region
+#  region = data.terraform_remote_state.eks.outputs.region
+  region = var.aws_region
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
 }
 
 data "aws_eks_cluster" "cluster" {
