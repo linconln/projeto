@@ -13,11 +13,10 @@ terraform {
 }
 
 data "terraform_remote_state" "eks" {
-  backend = "s3"
-
-#  config = {
-#    path = "../learn-terraform-provision-eks-cluster/terraform.tfstate"
-#  }
+  backend = "local"
+  config = {
+    path = "../terraform.tfstate"
+  }
 }
 
 # Retrieve EKS cluster information
