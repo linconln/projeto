@@ -13,9 +13,14 @@ terraform {
 }
 
 data "terraform_remote_state" "eks" {
-  backend = "local"
-  config = {
-    path = "../terraform/.terraform/terraform.tfstate"
+#  backend = "local"
+#  config = {
+#    path = "../terraform/.terraform/terraform.tfstate"
+#  }
+  backend  = "s3" {
+    bucket = "linconln-devops"
+    key    = "devops"
+    region = "us-east-1"
   }
 }
 
