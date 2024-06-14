@@ -21,14 +21,14 @@ data "terraform_remote_state" "eks" {
   config = {
     bucket = "linconln-devops"
     key    = "devops"
-    region = "us-east-1"
+    region = var.aws_region
   }
 }
 
 # Retrieve EKS cluster information
 provider "aws" {
 #  region = data.terraform_remote_state.eks.outputs.region
-  region = var.aws_region
+  region     = var.aws_region
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
 }
