@@ -71,3 +71,10 @@ jobs:
           TF_VAR_aws_secret_key: ${{ secrets.aws_secret_key }}
           AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+
+      - name: Setup Kubernetes
+        uses: Kubernetes@1
+
+      - name: "Kubectl Apply"
+        run: kubectl apply
+        working-directory: ./kubernetes
