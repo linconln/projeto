@@ -18,6 +18,9 @@ data "terraform_remote_state" "eks" {
 #    path = "../terraform/.terraform/terraform.tfstate"
 #  }
   backend  = "s3"
+  bucket = "linconln-devops"
+  key    = "devops"
+  region = "us-east-1"  
 }
 
 # Retrieve EKS cluster information
