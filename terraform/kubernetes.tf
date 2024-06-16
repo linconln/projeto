@@ -5,7 +5,6 @@ data "terraform_remote_state" "eks" {
     bucket = "linconln-devops"
     key = "devops"
     region = var.aws_region
-#    path = "./.terraform/terraform.tfstate"
   }
 }
 
@@ -29,8 +28,8 @@ provider "kubernetes" {
 }
 
 provider "kubectl" {
-  host                   = data.eks_cluster_endpoint
-  cluster_ca_certificate = base64decode(var.eks_cluster_ca)
+  host                   = data.aws_eks_cluster.cluster.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.main.token
   load_config_file       = false
 }
