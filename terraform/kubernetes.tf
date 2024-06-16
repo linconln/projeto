@@ -2,7 +2,10 @@ data "terraform_remote_state" "eks" {
   backend = "s3"
 
   config = {
-    path = "./.terraform/terraform.tfstate"
+    bucket = "linconln-devops"
+    key = "devops"
+    region = var.aws_region
+#    path = "./.terraform/terraform.tfstate"
   }
 }
 
@@ -26,7 +29,7 @@ provider "kubernetes" {
 }
 
 provider "kubectl" {
-  host                   = var.eks_cluster_endpoint
+  host                   = data.eks_cluster_endpoint
   cluster_ca_certificate = base64decode(var.eks_cluster_ca)
   token                  = data.aws_eks_cluster_auth.main.token
   load_config_file       = false
