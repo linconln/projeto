@@ -1,10 +1,6 @@
-Project instructions
-aplicar as configurações do Terraform
+Criação da infraestrutura usando github Actions e Terraform
 
-terraform init terraform apply
-
-Run the following command to retrieve the access credentials for your cluster and configure kubectl.
-
-You can now use kubectl to manage your cluster and deploy Kubernetes configurations to it.
-
-kubectl apply -f kubernetes
+Executar em Actions, create-eks.yaml
+Os arquivos na pasta Terraform provem da documentação em:
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/kubernetes-provider?variants=kubernetes%3Aeks

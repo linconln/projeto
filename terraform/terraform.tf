@@ -2,13 +2,6 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
-
-  # cloud {
-  #   workspaces {
-  #     name = "learn-terraform-eks"
-  #   }
-  # }
-
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -29,6 +22,16 @@ terraform {
       source  = "hashicorp/cloudinit"
       version = "~> 2.3.4"
     }
+
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.7.0"
+    }
+
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.16.1"
+    }
   }
 
   required_version = "~> 1.3"
@@ -39,4 +42,3 @@ terraform {
     region = "us-east-1"
   }
 }
-
