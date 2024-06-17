@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  ECR_REPOSITORY: ada
+  ECR_REPOSITORY: projeto
   EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
   AWS_REGION: us-east-1
 
