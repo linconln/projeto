@@ -5,14 +5,15 @@ Os arquivos na pasta Terraform provem da documentação em:
 
 Criar infra do EKS
 https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
+O workflow deve ser executado manualmente e com aprovação do revisor posteriormente
 
-Usar s3 tfstate
+Usar s3 para salvar o tfstate, criei manualmente conforme orientação do Leo
 https://developer.hashicorp.com/terraform/language/settings/backends/s3
 
 Aplicar manifestos do Kubernetes
+O workflow executa no push para a branch main
 
-https://registry.terraform.io/providers/gavinbunney/kubectl/latest/docs
+https://dlmade.medium.com/ci-cd-with-github-action-and-aws-eks-5fd9714010cd
 
-Essa parte está com problema, usando o kubectl e alterando a instancia, funcionou como esperado
+Foi necessário criar algumas variáveis e segredos no GITHUB
 
-aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)

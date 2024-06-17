@@ -7,7 +7,8 @@ on:
 
 env:
   ECR_REPOSITORY: projeto
-  EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
+#  EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
+  EKS_CLUSTER_NAME: $(terraform output cluster-name)
   AWS_REGION: us-east-1
 
 jobs:
