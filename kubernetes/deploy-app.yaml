@@ -18,7 +18,8 @@ spec:
           command: ["sleep", "30"]
       containers:
       - name: consumer
-        image: 437319827628.dkr.ecr.us-east-1.amazonaws.com/projeto
+#        image: linconln/consumer:1
+        image: DOCKER_IMAGE
         imagePullPolicy: Always
         command:
         - python
