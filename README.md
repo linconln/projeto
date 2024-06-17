@@ -16,4 +16,7 @@ O workflow executa no push para a branch main
 https://dlmade.medium.com/ci-cd-with-github-action-and-aws-eks-5fd9714010cd
 
 Foi necessário criar algumas variáveis e segredos no GITHUB
+Não consegui recuperar as variáveis abaixo na etapa de CD, pois foram criadas no CI e tem valores fixos para não precisar alterar o código
 
+  ECR_REPOSITORY: projeto
+  EKS_CLUSTER_NAME: ADA-eks-Linconln
