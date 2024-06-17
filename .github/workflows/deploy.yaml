@@ -8,7 +8,7 @@ on:
 env:
   ECR_REPOSITORY: ada
   EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
-  AWS_REGION: ${{var.aws_region}}
+  AWS_REGION: us-east-1
 
 jobs:
   
