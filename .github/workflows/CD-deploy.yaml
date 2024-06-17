@@ -11,7 +11,20 @@ env:
   AWS_REGION: ${{ vars.AWS_REGION }}
 
 jobs:
-  
+
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
   build:
     
     name: Deployment
@@ -25,7 +38,8 @@ jobs:
 
     - name: Check out code
       uses: actions/checkout@v2
-    
+
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
