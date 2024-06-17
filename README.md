@@ -26,3 +26,5 @@ Não consegui recuperar as variáveis abaixo na etapa de CD, pois foram criadas 
 Como utilizo o mesmo código e lógica desde o primeiro módulo, é preciso executar no pod o app que gera os relatórios e lista os endereços de acesso.
 No caso, o acesso aos relatórios também só funciona dentro do pod, pois não consegui fazer o ingress funcionar desde o kubernetes.
 Desde que mudou pra containers, o funcionamento deixou de executar corretamente como feito no docker-compose
+
+Inclusão do Sonar Cloud
