@@ -1,16 +1,3 @@
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: consumer-svc
-#spec:
-#  selector:
-#    app: consumer
-#  ports:
-#  - protocol: "TCP"
-#    port: 6000
-#    targetPort: web
-#  type: ClusterIP
-#---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -38,3 +25,4 @@ spec:
         args:
         - consumer.py
 
+# executa o módulo consumer que fica aguardando a fila do RabbitMQ
