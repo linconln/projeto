@@ -8,7 +8,7 @@ on:
 env:
   ECR_REPOSITORY: ada
   EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
-  aws-region: ${{ vars.aws_region }}
+  AWS_REGION: ${{ vars.aws_region }}
 
 jobs:
   
@@ -31,7 +31,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.aws_access_key  }}
         aws-secret-access-key: ${{ secrets.aws_secret_key }}
-        aws-region: ${{ vars.aws_region }}
+        aws-region: ${{ env.AWS_REGION }}
 
     - name: Login to Amazon ECR
       id: login-ecr
