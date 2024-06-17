@@ -16,14 +16,14 @@ jobs:
 
       - name: "Terraform Init"
         run: terraform init
-        working-directory: ./kubernetes
+        working-directory: ./terraform
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
 
       - name: "Terraform Apply"
         run: terraform apply -auto-approve
-        working-directory: ./kubernetes
+        working-directory: ./terraform
         env:
           AZDO_ORG_SERVICE_URL: ${{ vars.AZDO_ORG_SERVICE_URL }}
           AZDO_PERSONAL_ACCESS_TOKEN: ${{ secrets.AZDO_PERSONAL_ACCESS_TOKEN }}
