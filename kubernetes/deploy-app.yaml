@@ -18,7 +18,7 @@ spec:
           command: ["sleep", "30"]
       containers:
       - name: consumer
-        image: consumer
+        image: 437319827628.dkr.ecr.us-east-1.amazonaws.com/projeto
         imagePullPolicy: Always
         command:
         - python
