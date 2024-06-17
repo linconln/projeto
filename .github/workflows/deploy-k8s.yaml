@@ -15,9 +15,9 @@ jobs:
         uses: Azure/k8s-set-context@v3.0
         with:
           # Acceptable values: generic or arc
-          cluster-type: # default is generic
+          cluster-type: generic
           # Acceptable values: kubeconfig or service-account or service-principal
-          method: # default is kubeconfig
+          method: kubeconfig
           # Contents of kubeconfig file
           kubeconfig: # optional
           # If your kubeconfig has multiple contexts, use this field to use a specific context, otherwise the default one would be chosen
@@ -39,7 +39,8 @@ jobs:
         uses: okteto/apply@latest
         with:
           # Path to the Kubernetes manifest. Can be a file or a directory
-          manifest: ../kubernetes/ # optional, default is k8s.yml
+          manifest: ../kubernetes/ 
+          # optional, default is k8s.yml
           # If present, the namespace scope for this action. If not specified, it will use the current context
           namespace: # optional
                             

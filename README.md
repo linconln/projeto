@@ -14,3 +14,5 @@ Aplicar manifestos do Kubernetes
 https://registry.terraform.io/providers/gavinbunney/kubectl/latest/docs
 
 Essa parte está com problema, usando o kubectl e alterando a instancia, funcionou como esperado
+
+aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
