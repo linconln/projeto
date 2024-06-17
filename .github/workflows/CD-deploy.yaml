@@ -7,7 +7,7 @@ on:
 
 env:
   ECR_REPOSITORY: projeto
-  EKS_CLUSTER_NAME: ADA-eks-zBUIayUn
+  EKS_CLUSTER_NAME: ADA-eks-Linconln
   AWS_REGION: ${{ vars.AWS_REGION }}
 
 jobs:

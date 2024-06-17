@@ -17,8 +17,7 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  cluster_name = "ADA-eks-Linconln
-#  cluster_name = "ADA-eks-${random_string.suffix.result}"
+  cluster_name = "ADA-eks-Linconln"
 }
 
 resource "random_string" "suffix" {
