@@ -17,7 +17,7 @@ jobs:
         uses: okteto/apply@latest
         with:
           # Path to the Kubernetes manifest. Can be a file or a directory
-          manifest: ../kubernetes/ 
+          manifest: ./kubernetes/ 
           # optional, default is k8s.yml
           # If present, the namespace scope for this action. If not specified, it will use the current context
           namespace: # optional
@@ -25,19 +25,3 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
-
-      - name: "Terraform Apply"
-        run: terraform apply -auto-approve
-        working-directory: ./terraform
-        env:
-          AZDO_ORG_SERVICE_URL: ${{ vars.AZDO_ORG_SERVICE_URL }}
-          AZDO_PERSONAL_ACCESS_TOKEN: ${{ secrets.AZDO_PERSONAL_ACCESS_TOKEN }}
-          TF_VAR_reviewers_group_name: ${{ inputs.grupoRevisores }}
-          TF_VAR_ami_id: ${{ vars.ami_id }}
-          TF_VAR_aws_region: ${{ vars.aws_region }}
-          TF_VAR_aws_access_key: ${{ secrets.aws_access_key }}
-          TF_VAR_aws_secret_key: ${{ secrets.aws_secret_key }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
-
-      
