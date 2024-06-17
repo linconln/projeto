@@ -11,28 +11,6 @@ jobs:
       - name: Checkout deploy
         uses: actions/checkout@v4
 
-      - name: Kubernetes Set Context
-        uses: Azure/k8s-set-context@v3.0
-        with:
-          # Acceptable values: generic or arc
-          cluster-type: generic
-          # Acceptable values: kubeconfig or service-account or service-principal
-          method: kubeconfig
-          # Contents of kubeconfig file
-          #kubeconfig: # optional
-          # If your kubeconfig has multiple contexts, use this field to use a specific context, otherwise the default one would be chosen
-          context: # optional
-          # Cluster Url
-          k8s-url: # optional
-          # Service account secret (run kubectl get serviceaccounts <service-account-name> -o yaml and copy the service-account-secret-name)
-          k8s-secret: # optional
-          # Token extracted from the secret of service account (should be base 64 decoded)
-          token: # optional
-          # Azure resource group name
-          resource-group: # optional
-          # Azure connected cluster name
-          cluster-name: # optional
-
       - name: Kubectl Apply
         # You may pin to the exact commit or the version.
         # uses: okteto/apply@328f43d812068515fb2018820883ab0df07532ca
